@@ -44,20 +44,47 @@ section {
     margin: 0 0 12rem 0;
 }
 
+.container-sm {
+    margin: 0 auto;
+    width: var(--con-sm);
+}
+
+.container-md {
+    margin: 0 auto;
+    width: var(--con-md);
+}
+
+.container-lg {
+    margin: 0 auto;
+    width: var(--con-lg);
+}
+
+@media screen and (max-width: 570px) {
+    .container-sm,
+    .container-md,
+    .container-lg {
+        width: 100%;
+    }
+}
+
 /*================================NAV STYLES==========================*/
 
 nav {
-    display: flex;
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     font-size: 1.2rem;
     align-items: center;
     z-index: 3;
     background: var(--background);
+}
+
+.logos {
+    display: flex;
 }
 
 .navLogosImg {
@@ -69,7 +96,7 @@ nav {
 }
 
 .navLogosImg:last-child {
-    margin-left: -12%;
+    margin-left: -10%;
     z-index: 0;
     filter: var(--svg-color);
 }
@@ -93,7 +120,7 @@ nav {
 .navCatHeader {
     align-items: center;
     white-space: nowrap;
-    padding-left: var(--interspace);
+    padding: var(--interspace) 0 var(--interspace) var(--interspace);
     display: flex;
     justify-content: space-between;
     cursor: pointer;
@@ -117,7 +144,7 @@ nav {
 
 .navCatContent {
     width: 350px;
-    height: calc(100vh - (55px)) ;
+    height: calc(100vh - (55px));
     background: var(--primary);
     border-radius: 0 0 var(--radius) var(--radius);
     position: absolute;
@@ -201,9 +228,7 @@ nav {
 .navPreferences {
     margin: var(--interspace);
     width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    height: 100%;
 }
 
 .themeMode {
@@ -227,7 +252,7 @@ nav {
 }
 
 .themeMode input[type="checkbox"]:checked+label:before {
-    transform: translateX(45px);
+    transform: translateX(27px);
     background-color: #FFF;
 }
 
@@ -235,10 +260,10 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 90px;
-    height: 45px;
-    border: 6px solid;
-    border-radius: 49em;
+    width: 60px;
+    height: 30px;
+    border: 4px solid;
+    border-radius: 34em;
     position: relative;
     transition: transform 0.75s ease-in-out;
     transform-origin: 50% 50%;
@@ -251,12 +276,21 @@ nav {
     content: "";
     display: block;
     position: absolute;
-    width: 27px;
-    height: 27px;
+    width: 18px;
+    height: 18px;
     background-color: #000;
     border-radius: 50%;
-    top: 3px;
+    top: 2px;
     left: 3px;
+}
+
+@media screen and (max-width: 570px) {
+    nav {
+        justify-content: center;
+    }
+    .navCatContent {
+        height: calc(100vh - (185px));
+    }
 }
 
 /*================================HEADER STYLES==========================*/
@@ -265,14 +299,10 @@ header {
     width: 100%;
     height: 100vh;
     position: relative;
-    align-items: center;
-    display: flex;
+    padding-top: 10%;
 }
 
 .stacked {
-    margin: 0 auto;
-    padding-bottom: 20rem;
-    width: var(--con-sm);
     text-align: center;
     line-height: 1.2;
 }
@@ -300,10 +330,6 @@ header {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .regionLogo {
@@ -364,10 +390,19 @@ header {
 
 .headerImgDec {
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     width: 100%;
     pointer-events: none;
+}
+
+@media screen and (max-width: 570px) {
+    nav {
+        justify-content: center;
+    }
+    .navCatContent {
+        height: calc(100vh - (185px));
+    }
 }
 
 /*================================ARTICLE STYLES==========================*/
@@ -523,6 +558,7 @@ article {
     left: -5%;
     cursor: pointer;
     transition:  var(--transition);
+    z-index: 2;
 }
 
 .carouselControlsPrev:hover {
@@ -535,6 +571,7 @@ article {
     right: -5%;
     cursor: pointer;
     transition:  var(--transition);
+    z-index: 2;
 }
 
 .carouselControlsNext:hover {
@@ -551,6 +588,21 @@ article {
     padding-top: 3rem;
 }
 
+@media screen and (max-width: 700px) {
+    .carouselItem {
+        width: 170px;
+        height: 140px;
+    }
+    .carouselItem2,.carouselItem4  {
+        width: 220px;
+        height: 190px;
+    }
+    .carouselItem3 {
+        width: 270px;
+        height: 240px;
+    }
+}
+
 .calendarSec {
     padding: var(--interspace);
     background: var(--accent);
@@ -564,8 +616,8 @@ article {
 .eventCalendar {
     margin: var(--interspace) auto;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    width: var(--con-md);
 }
 
 .calendarItem {
@@ -644,24 +696,28 @@ article {
 }
 
 .infoWrapper {
-    width: var(--con-md);
     display: flex;
-    margin: 0 auto;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .contactWrapper {
     width: 50%;
-    min-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: start;
+    margin-bottom: 4rem;
 }
 
 .contactForm {
     display: flex;
+    width: 100%;
+}
+
+.contactItemWrapper {
+    display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    width: 70%;
-    min-width: 400px;
+    width: 80%;
 }
 
 .contactItem {
@@ -669,11 +725,10 @@ article {
     border-radius: var(--radius);
     padding: 0.3rem;
     font-family: 'Poppins', sans-serif;
-    width: 80%;
     font-size: 1.2rem;
 }
 
-.contactForm > textarea {
+.contactItemWrapper > textarea {
     height: 200px;
     font-size: 1rem;
 }
@@ -681,7 +736,6 @@ article {
 .contactBtn {
     font-size: 1.4rem;
     width: 150px;
-
 }
 
 .aboutWrapper {
@@ -714,6 +768,20 @@ article {
     aspect-ratio: 1/1;
 }
 
+@media screen and (max-width: 570px) {
+    .contactWrapper {
+        width: 100%;
+    }
+    .contactForm {
+        justify-content: center;
+    }
+    .aboutWrapper {
+        width: 100%;
+    }
+}
+
+/*================================FOOTER STYLES==========================*/
+
 footer {
     padding: 3rem 0;
     background: var(--lighter-primary);
@@ -728,6 +796,7 @@ footer {
 
 .footerHeading {
     display: flex;
+    flex-wrap: wrap;
     width: 50%;
     align-items: center;
 }

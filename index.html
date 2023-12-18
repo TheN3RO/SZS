@@ -88,10 +88,10 @@
                             <div>
                                 <input type="checkbox" id="toggle"/>
                                 <label for="toggle">
-                                    <span class="material-symbols-outlined">
+                                    <span class="material-symbols-outlined themeIcon">
                                         dark_mode
                                     </span>
-                                    <span class="material-symbols-outlined">
+                                    <span class="material-symbols-outlined themeIcon">
                                         light_mode
                                     </span>
                                 </label>
@@ -103,7 +103,7 @@
             </div>
         </nav>
         <header>
-            <div class="stacked" id="headerInfo">
+            <div class="container-sm stacked" id="headerInfo">
                 <h1>Oficjalna strona Słupskiego Szkolnego Związeku Sportowego</h1>
                 <div class="stackedLore">
                     <button class="btn stackedBtn">System Rejestracji Szkół</button>
@@ -111,15 +111,15 @@
                 <h3>Rozgrywki</h3>
                 <div class="stagesWrapper">
                     <div class="stackedStages">
-                        <div class="cityLogo regionLogo">
+                        <div class="cityLogo regionLogo" data-aos="flip-down">
                             <img src="./public/images/POL_Słupsk_COA.svg" alt="city logo">
                             <p>Miastowe</p>
                         </div>
-                        <div class="districtLogo regionLogo">
+                        <div class="districtLogo regionLogo" data-aos="flip-down">
                             <img src="./public/images/POL_powiat_słupski_COA.svg" alt="district logo">
                             <p>Powiatowe</p>
                         </div>
-                        <div class="countyLogo regionLogo">
+                        <div class="countyLogo regionLogo" data-aos="flip-down">
                             <img src="./public/images/POL_województwo_pomorskie_COA.svg" alt="county logo">
                             <p>Wojewódzkie</p>
                         </div>
@@ -357,14 +357,14 @@
                         <h1>Nowości</h1>
                     </div>
                     <div class="carouselWrapper">
-                        <span class="material-symbols-outlined carouselControlsPrev">
-                            arrow_back_ios
-                        </span>
                         <img class="carouselItem carouselItem1" src="./public/images/test.jpg" alt="carousel item 1" data-index="1" />
                         <img class="carouselItem carouselItem2" src="./public/images/test2.jpg" alt="carousel item 2" data-index="2" />
                         <img class="carouselItem carouselItem3" src="./public/images/test3.jpg" alt="carousel item 3" data-index="3" />
                         <img class="carouselItem carouselItem4" src="./public/images/test2.jpg" alt="carousel item 4" data-index="4" />
                         <img class="carouselItem carouselItem5" src="./public/images/test.jpg" alt="carousel item 5" data-index="5" />
+                        <span class="material-symbols-outlined carouselControlsPrev">
+                            arrow_back_ios
+                        </span>
                         <span class="material-symbols-outlined carouselControlsNext">
                             arrow_forward_ios
                         </span>
@@ -377,15 +377,15 @@
             </section>
             <section class="calendarSec">
                 <h1>Kalendarz wydarzeń</h1>
-                <div class="eventCalendar">
+                <div class="container-md eventCalendar">
                     <div class="calendarWrapper calendarItem" data-aos="zoom-in-right">
                         <div id="calendar"></div>
                     </div>
-                    <div class="eventsWrapper calendarItem" data-aos="zoom-in-left">
+                    <div class="eventsWrapper calendarItem">
                         <h4 id="eventHeading">Wydarzenia: 19.12.2023</h4>
                         <div class="events">
                             <ul class="tilesEvent">
-                                <li>
+                                <li data-aos="zoom-in-left">
                                     <img class="eventIcon" src="./public/icons/bowling_icon.svg" alt="event icon">
                                     <div class="eventLore">
                                         <h5>JAKIES WYDARZENIE</h5>
@@ -393,7 +393,7 @@
                                         <button class="btn">Czytaj dalej</button>
                                     </div>
                                 </li>
-                                <li>
+                                <li data-aos="zoom-in-left" >
                                     <img class="eventIcon" src="./public/icons/equipment_gym_icon.svg" alt="event icon">
                                     <div class="eventLore">
                                         <h5>JAKIES WYDARZENIE</h5>
@@ -401,7 +401,7 @@
                                         <button class="btn">Czytaj dalej</button>
                                     </div>
                                 </li>
-                                <li>
+                                <li data-aos="zoom-in-left">
                                     <img class="eventIcon" src="./public/icons/football_soccer_icon.svg" alt="event icon">
                                     <div class="eventLore">
                                         <h5>JAKIES WYDARZENIE</h5>
@@ -409,7 +409,7 @@
                                         <button class="btn">Czytaj dalej</button>
                                     </div>
                                 </li>
-                                <li>
+                                <li data-aos="zoom-in-left">
                                     <img class="eventIcon" src="./public/icons/pool_snooker_icon.svg" alt="event icon">
                                     <div class="eventLore">
                                         <h5>JAKIES WYDARZENIE</h5>
@@ -424,9 +424,10 @@
             </section>
             <section class="infoSec">
                 <h1>Informacje</h1>
-                <div class="infoWrapper">
-                        <div class="contactWrapper">
-                            <form method="post" class="contactForm">
+                <div class="infoWrapper container-md">
+                    <div class="contactWrapper">
+                        <form method="post" class="contactForm">
+                            <div class="contactItemWrapper">
                                 <h2>Napisz do nas</h2>
                                 <label for="contactName">Twoje imię</label>
                                 <input name="contactName" type="text" class="contactItem">
@@ -435,8 +436,9 @@
                                 <label for="contactEmail">Wiadomość</label>
                                 <textarea class="contactItem"></textarea>
                                 <button class="btn contactBtn">Wyślij</button>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
+                    </div>
                     <div class="aboutWrapper">
                         <img src="./public/icons/organization_icon.svg" alt="organization icon" class="aboutIcon">
                         <p><strong>Organizacja</strong> - Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur non odit eos ex velit, ipsa sapiente quaerat ad magni laboriosam error corrupti laudantium voluptate modi blanditiis beatae consectetur quibusdam. Tempore?</p>
