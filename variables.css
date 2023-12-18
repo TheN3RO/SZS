@@ -1,0 +1,48 @@
+:root{
+    --transition: all 300ms ease;
+
+    --radius: 5px;
+    --interspace: 0.7rem;
+
+    --con-lg: 88%;
+    --con-md: 76%;
+    --con-sm: 60%;
+}
+html[data-theme='light'] {
+    --primary: #E5E7EB;
+    --lighter-primary: #f3f3fa;
+    --secondary: #84CC16;
+    --tertiary: #6B7280;
+    --accent: #F1FED7;
+    --sec-accent: #f4f8ec;
+    --background: #FFFFFF;
+    --sec-background: #111827;
+    --text: #0d0e11;
+    --sec-text: #F2F1EE;
+    --chosen: #619710;
+    --white: #FFFFFF;
+    --navy-blue: #040d20;
+    --svg-color: invert(0%) sepia(11%) saturate(7458%) hue-rotate(338deg) brightness(87%) contrast(94%); /*Black*/
+}
+
+html[data-theme='dark'] {
+    --primary: #010c24;
+    --lighter-primary: #0c2453;
+    --secondary: #84CC16;
+    --tertiary: #948d7f;
+    --accent: #2b3528;
+    --sec-accent: #0b0713;
+    --background: #111827;
+    --sec-background: #FFFFFF;
+    --text: #F2F1EE;
+    --sec-text: #0d0e11;
+    --chosen: #619710;
+    --white: #FFFFFF;
+    --navy-blue: #040d20;
+    --svg-color: invert(100%) sepia(1%) saturate(7500%) hue-rotate(203deg) brightness(100%) contrast(103%); /*White*/
+}
+
+html[data-theme='light'] .newsCarousel,
+html[data-theme='dark'] .newsCarousel {
+    --primary: #010c24;
+}
