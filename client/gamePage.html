@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Słupski Szkolny Związek Sportowy</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!--CSS STYLES-->
+    <link rel='stylesheet' type='text/css' media='screen' href='../main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../src/styles/client.css'>
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@300&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <!--ICONS-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
+    <!--AOS LIB-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <!--GSAP-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <!--GSAP PLUGINS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/Observer.min.js"></script>
+    <!--LENIS SCROLL SMOOTH-->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script> 
+    <!--CALENDAR-->
+    <link href="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/build/vanilla-calendar.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/build/vanilla-calendar.min.js" defer></script>
+
+</head>
+<body>
+    <main>
+        <nav>
+            <div class="logos">
+                <img src="../public/images/cropped-logo_szs_header.svg" class="navLogosImg" alt="Logo Szkolnego Związku Sportowego">
+                <img src="../public/images/LOGO_SLUPSK.svg" class="navLogosImg" alt="Logo Miasta Słupsk">
+            </div>
+            <div class="navBarWrapper">
+                <a><div class="navBarItem">Home</div></a>
+                <a><div class="navBarItem">Wojewódzki SZS</div></a>
+                <a><div class="navBarItem">Galeria</div></a>
+            </div>
+            <div class="navCategories">
+                <div class="navCatHeader closed">
+                    <div>
+                        <span class="material-symbols-outlined navIconBorder">category</span>
+                        Kategorie
+                    </div>
+                    <span class="material-symbols-outlined catLessIcon">
+                        expand_circle_down
+                    </span>
+                </div>
+                <div class="navCatContent">
+                    <ul class="navCatTree">
+                        <li><span class="caret">Słupska Olimpiada Młodzieży <span class="extendSymbol">+</span></span>
+                            <ul class="nested">
+                                <li>Komunikaty</li>
+                                <li>Kalendarze</li>
+                                <li>Klasyfikacja</li>
+                            </ul>
+                        </li>
+                        <li><span class="caret">Powiatowa Olimpiada Młodzieży <span class="extendSymbol">+</span></span>
+                            <ul class="nested">
+                                <li>Komunikaty</li>
+                                <li>Kalendarze</li>
+                                <li>Klasyfikacja</li>
+                            </ul>
+                        </li>
+                        <li><span class="caret">Rozgrywki Wojewódzkie <span class="extendSymbol">+</span></span>
+                            <ul class="nested">
+                                <li>Komunikaty</li>
+                                <li>Kalendarze</li>
+                                <li>Dokumentacja zawodów</li>
+                            </ul>
+                        </li>
+                        <li><span class="caret">Inne <span class="extendSymbol">+</span></span>
+                            <ul class="nested">
+                                <li>Zawody sportowe</li>
+                                <li>Szkolenia</li>
+                                <li>Tabele i protokły</li>
+                                <li>Prywatność i ciasteczka</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="navPreferences">
+                        <h4>Preferencje</h4>
+                        <div class="themeMode">
+                            <p>Jasny</p>
+                            <div>
+                                <input type="checkbox" id="toggle"/>
+                                <label for="toggle">
+                                    <span class="material-symbols-outlined themeIcon">
+                                        dark_mode
+                                    </span>
+                                    <span class="material-symbols-outlined themeIcon">
+                                        light_mode
+                                    </span>
+                                </label>
+                            </div>
+                            <p>Ciemny</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <header>
+            <img src="../public/images/decoration2.svg" alt="decoration 2" class="dec2">
+            <div class="filtersWrapper container-md">
+                <div class="filterItem byCategory">
+                    <label for="categoryFilter">Kategoria</label>
+                    <select id="categoryFilter" class="filterInput">
+                        <option value="spm">Szkoły Podstawowe - młodsze rocz.</option>
+                        <option value="spm">Szkoły Podstawowe - starsze rocz.</option>
+                        <option value="spp">Szkoły Ponadpodstawowe</option>
+                    </select>
+                </div>
+                <div class="filterItem">
+                    <label for="monthFilter">Miesiąc</label>
+                    <input id="calendarMonth" name="monthFilter" type="text" class="filterInput byMonth">
+                </div>
+                <div class="filterItem">
+                    <label for="yearFilter">Rok</label>
+                    <input id="calendarYear" name="yearFilter" type="text" class="filterInput byYear">
+                </div>
+                <div class="filterItem searchForm">
+                    <label for="searchBox">Szukaj</label>
+                    <div class="searchWrapper">
+                        <input type="search" name="searchBox" class="searchInput filterInput">
+                        <hr>
+                        <button class="searchBtn">Szukaj</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <article>
+            <section>
+                <div class="game container-md">
+                    <div class="template">
+                        <div class="templateItem">
+                            <div class="templateImgWrapper">
+                                <div class="templateImg">
+                                    <img src="../public/images/test.jpg" alt="image 1">
+                                </div>
+                                <div class="templateImg">
+                                    <img src="../public/images/test2.jpg" alt="image 2">
+                                </div>
+                                <div class="templateImg">
+                                    <img src="../public/images/test3.jpg" alt="image 3">
+                                </div>
+                                <div class="templateImg">
+                                    <img src="../public/images/test4.jpg" alt="image 4">
+                                </div>
+                            </div>
+                            <div class="templateHeading">
+                                <h2>SOM SP - kom. org. - piłka siatkowa (czwórki) dziewcząt i chłopców - rocz. młodszy</h2>
+                                <p><h4>Miejsce:</h4> 
+                                    <p>Hala Sportowa ZSO (SP16) przy ul. Zaborowskiej 2 (sala obok szkoły)</p>
+                                <p>
+                                <p>
+                                    <h4>Termin:</h4> 
+                                    <p>dziewczęta - 12.12.2023 r. o godz.13.00 (wtorek), losowanie 12.30</p>
+                                    <p>chłopcy     - 19.12.2023 r. o godz.13.00 (wtorek), losowanie 12.30</p>
+                                </p>
+                                <p><h4>Orgzanizator:</h4> 
+                                   <p>Prowadzący SOM
+                                    Marek Zawadzki</p> 
+                                </p>
+                            </div>
+                        </div>
+                        <div class="templateItem">
+                            <div class="templateDesc">
+                                <h3>Opis</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, eligendi sit sint omnis doloremque quia quasi tenetur magni assumenda officia reprehenderit porro necessitatibus in consequatur. Voluptate, ea. Quibusdam, officia consequatur?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+        <footer>
+            <div class="footerWrapper">
+                <div class="footerHeading">
+                    <div class="logos">
+                        <img src="../public/images/cropped-logo_szs_header.svg" class="navLogosImg" alt="Logo Szkolnego Związku Sportowego">
+                        <img src="../public/images/LOGO_SLUPSK.svg" class="navLogosImg" alt="Logo Miasta Słupsk">
+                    </div>
+                    <h2>Słupski Szkolny Związek Sportowy</h2>
+                </div>
+                <div class="footerLinks">
+                    <div class="company links">
+                        <p>ORGANIZACJA</p>
+                        <a>O nas</a>
+                        <a>Kariera</a>
+                        <a>Nowości</a>
+                    </div>
+                    <div class="legal links">
+                        <p>AKTY PRAWNE</p>
+                        <a>Zasady i Warunki</a>
+                        <a>Prywatność</a>
+                        <a>Protokoły</a>
+                        <a>Statut</a>
+                    </div>
+                    <div class="socials links">
+                        <p>OBSERWUJ NAS</p>
+                        <a href="https://www.facebook.com/profile.php?id=100086442638282">
+                            <img src="../public/icons/facebook_icon.svg" alt="facebook icon">
+                            Facebook
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <!--JS-->
+    <script src="../src/jScripts/toggleTheme.js"></script>
+    <script src="../src/jScripts/animations.js"></script>
+    <script src="../src/jScripts/calendarFilter.js"></script>
+    <script src="../src/jScripts/categoryTreeView.js"></script>
+    <!--AOS JS-->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+</body>
+</html>

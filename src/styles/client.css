@@ -1,0 +1,137 @@
+/*================================HEADER STYLES==========================*/
+
+header {
+    position: relative;
+}
+
+.dec2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.filtersWrapper {
+    background: var(--tertiary);
+    padding: var(--interspace);
+    margin: var(--interspace) auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: var(--radius);
+    color: var(--sec-text);
+}
+
+.filterItem {
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px var(--tertiary) dashed;
+    padding: var(--interspace);
+}
+
+.filterItem:last-child {
+    border: none;
+}
+
+#calendarMonth::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+#calendarYear::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+.filterInput {
+    padding: 0.3rem;
+    font-size: 1rem;
+}
+
+.byMonth {
+    width: 100px;
+}
+
+.byYear {
+    width: 100px;
+}
+
+.searchWrapper {
+    display: flex;
+    border: 1px var(--tertiary) solid;
+    border-radius: var(--radius);
+    background: var(--background);
+    padding: 0.3rem;
+
+}
+
+.searchWrapper hr {
+    width: 1px;
+    height: 139%;
+    background: var(--tertiary);
+    margin: -0.3rem 0.3rem 0 0.3rem;
+}
+
+.searchBtn {
+    background: var(--background);
+    cursor: pointer;
+}
+
+/*================================ARTICLE STYLES==========================*/
+
+.template {
+    margin: var(--interspace);
+    padding: var(--interspace);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.templateItem {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.templateImgWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 750px;
+}
+
+.templateImg {
+    max-width: 350px;
+    max-height: calc(350px / (1.618));
+    margin: var(--interspace);
+}
+
+.templateImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius);
+    padding: 0.3rem;
+    border: 3px var(--tertiary) solid;
+}
+
+.templateHeading {
+    max-width: calc(100% - (750px));
+    border-radius: var(--radius);
+    background: var(--primary);
+    padding: var(--interspace);
+}
+
+.templateDesc {
+    border-top: 1px var(--tertiary) solid;
+    border-radius: var(--radius);
+    background: var(--background);
+    padding: var(--interspace);
+    margin: var(--interspace) 0;
+}
+
+@media screen and (max-width: 1500px) {
+    .templateHeading {
+        max-width: 100%;
+    }
+}
