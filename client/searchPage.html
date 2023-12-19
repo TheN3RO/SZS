@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Słupski Szkolny Związek Sportowy</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!--CSS STYLES-->
+    <link rel='stylesheet' type='text/css' media='screen' href='../main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../src/styles/client.css'>
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@300&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <!--ICONS-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
+    <!--AOS LIB-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <!--GSAP-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <!--GSAP PLUGINS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/Observer.min.js"></script>
+    <!--LENIS SCROLL SMOOTH-->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script> 
+    <!--CALENDAR-->
+    <link href="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/build/vanilla-calendar.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/build/vanilla-calendar.min.js" defer></script>
+
+</head>
+<body>
+    <main>
+        <nav>
+            <div class="logos">
+                <img src="../public/images/cropped-logo_szs_header.svg" class="navLogosImg" alt="Logo Szkolnego Związku Sportowego">
+                <img src="../public/images/LOGO_SLUPSK.svg" class="navLogosImg" alt="Logo Miasta Słupsk">
+            </div>
+            <div class="navBarWrapper">
+                <a><div class="navBarItem">Home</div></a>
+                <a><div class="navBarItem">Wojewódzki SZS</div></a>
+                <a><div class="navBarItem">Galeria</div></a>
+            </div>
+            <div class="navCategories">
+                <div class="navCatHeader closed">
+                    <div>
+                        <span class="material-symbols-outlined navIconBorder">category</span>
+                        Kategorie
+                    </div>
+                    <span class="material-symbols-outlined catLessIcon">
+                        expand_circle_down
+                    </span>
+                </div>
+                <div class="navCatContent">
+                    <ul class="navCatTree">
+                        <li><span class="caret">Słupska Olimpiada Młodzieży <span class="extendSymbol">+</span></span>
+                            <ul class="nested">
+                                <li>Komunikaty</li>
+                                <li>Kalendarze</li>
+                                <li>Klasyfikacja</li>
+                            </ul>
+                        </li>
+                        <li><span class="caret">Powiatowa Olimpiada Młodzieży <span class="extendSymbol">+</span></span>
+                            <ul class="nested">
+                                <li>Komunikaty</li>
+                                <li>Kalendarze</li>
+                                <li>Klasyfikacja</li>
+                            </ul>
+                        </li>
+                        <li><span class="caret">Rozgrywki Wojewódzkie <span class="extendSymbol">+</span></span>
+                            <ul class="nested">
+                                <li>Komunikaty</li>
+                                <li>Kalendarze</li>
+                                <li>Dokumentacja zawodów</li>
+                            </ul>
+                        </li>
+                        <li><span class="caret">Inne <span class="extendSymbol">+</span></span>
+                            <ul class="nested">
+                                <li>Zawody sportowe</li>
+                                <li>Szkolenia</li>
+                                <li>Tabele i protokły</li>
+                                <li>Prywatność i ciasteczka</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="navPreferences">
+                        <h4>Preferencje</h4>
+                        <div class="themeMode">
+                            <p>Jasny</p>
+                            <div>
+                                <input type="checkbox" id="toggle"/>
+                                <label for="toggle">
+                                    <span class="material-symbols-outlined themeIcon">
+                                        dark_mode
+                                    </span>
+                                    <span class="material-symbols-outlined themeIcon">
+                                        light_mode
+                                    </span>
+                                </label>
+                            </div>
+                            <p>Ciemny</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <article>
+            <section>
+                <div class="search container-md">
+                    <div id="filters">
+                        <div class="filtersWrapper">
+                            <div class="filterItem searchForm">
+                                <div class="searchWrapper">
+                                    <input type="search" name="searchBox" class="searchInput filterInput">
+                                    <hr>
+                                    <button class="searchBtn">
+                                        <span class="material-symbols-outlined">
+                                            search
+                                        </span>    
+                                        Szukaj
+                                    </button>
+                                </div>
+                            </div>
+                            <h3>Filtry</h3>
+                            <div class="filterItem byCategory">
+                                <label>Kategorie</label>
+                                <div>
+                                    <input type="checkbox" id="spm" name="category" value="spm" >
+                                    <label for="spm">Szkoły Podstawowe - młodsze rocz.</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="sps" name="category" value="sps" >
+                                    <label for="sps">Szkoły Podstawowe - starsze rocz.</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="spp" name="category" value="spp" >
+                                    <label for="spp">Szkoły Ponadpodstawowe</label>
+                                </div>
+                            </div>
+                            <div class="filterItem">
+                                <label for="monthFilter">Miesiąc</label>
+                                <input name="monthFilter" type="text" class="filterInput byMonth calendarMonth">
+                            </div>
+                            <div class="filterItem">
+                                <label for="yearFilter">Rok</label>
+                                <input name="yearFilter" type="text" class="filterInput byYear calendarYear">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="resultBox">
+                        <div class="resultNav">
+                            <hr>
+                            <div class="resultNavWrapper">
+                                <div id="filterMenu">
+                                    <span class="material-symbols-outlined menuTrigger">
+                                        menu
+                                    </span>
+                                    <div class="filtersWrapper" id="filtersPopup">
+                                        <div class="filterItem searchForm">
+                                            <div class="searchWrapper">
+                                                <input type="search" name="searchBox" class="searchInput filterInput">
+                                                <hr>
+                                                <button class="searchBtn">
+                                                    <span class="material-symbols-outlined">
+                                                        search
+                                                    </span>    
+                                                    Szukaj
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <h3>Filtry</h3>
+                                        <div class="filterItem byCategory">
+                                            <label>Kategorie</label>
+                                            <div>
+                                                <input type="checkbox" id="spm" name="category" value="spm" >
+                                                <label for="spm">Szkoły Podstawowe - młodsze rocz.</label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="sps" name="category" value="sps" >
+                                                <label for="sps">Szkoły Podstawowe - starsze rocz.</label>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" id="spp" name="category" value="spp" >
+                                                <label for="spp">Szkoły Ponadpodstawowe</label>
+                                            </div>
+                                        </div>
+                                        <div class="filterItem">
+                                            <label for="monthFilter">Miesiąc</label>
+                                            <input name="monthFilter" type="text" class="filterInput byMonth calendarMonth">
+                                        </div>
+                                        <div class="filterItem">
+                                            <label for="yearFilter">Rok</label>
+                                            <input name="yearFilter" type="text" class="filterInput byYear calendarYear">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="resultSort">
+                                    <label for="sortOrder">Sortowanie</label>
+                                    <select class="sortSelect">
+                                        <option value="earliest">Od najwcześniejszych</option>
+                                        <option value="latest">Od najpóźniejszych</option>
+                                    </select>
+                                </div>
+                                <div class="pageNum">
+                                    <span class="material-symbols-outlined">
+                                        chevron_left
+                                    </span>
+                                    <input type="number" value="1" class="pageNumInput">
+                                    z 4
+                                     <span class="material-symbols-outlined">
+                                        chevron_right
+                                    </span>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="resultWrapper">
+                            <a class="resultItem" href="./gameDetailsPage.html">
+                                <img src="../public/icons/football_soccer_icon.svg" alt="football soccer icon">
+                                <div class="resultItemInfo">
+                                    <h5>SOM SPP - kom. org. - halowa piłka nożna chłopców - eliminacjie i finał</h5>
+                                    <p>Miejsce: ZS „Elektryk”</p>
+                                    <p>Termin: 30.11.2023</p>
+                                </div>
+                            </a>
+                            <div class="resultItem">
+                                <img src="../public/icons/golf_icon.svg" alt="golf icon">
+                                <div class="resultItemInfo">
+                                    <h5>SOM SPP - kom. org. - halowa piłka nożna chłopców - eliminacjie i finał</h5>
+                                    <p>Miejsce: ZS „Elektryk”</p>
+                                    <p>Termin: 30.11.2023</p>
+                                </div>
+                            </div>
+                            <div class="resultItem">
+                                <img src="../public/icons/pool_snooker_icon.svg" alt="pool snooker icon">
+                                <div class="resultItemInfo">
+                                    <h5>SOM SPP - kom. org. - halowa piłka nożna chłopców - eliminacjie i finał</h5>
+                                    <p>Miejsce: ZS „Elektryk”</p>
+                                    <p>Termin: 30.11.2023</p>
+                                </div>
+                            </div>
+                            <div class="resultItem">
+                                <img src="../public/icons/dumbbells_icon.svg" alt="dumbbells icon">
+                                <div class="resultItemInfo">
+                                    <h5>SOM SPP - kom. org. - halowa piłka nożna chłopców - eliminacjie i finał</h5>
+                                    <p>Miejsce: ZS „Elektryk”</p>
+                                    <p>Termin: 30.11.2023</p>
+                                </div>
+                            </div>
+                            <div class="resultItem">
+                                <img src="../public/icons/score_icon.svg" alt="score icon">
+                                <div class="resultItemInfo">
+                                    <h5>SOM SPP - kom. org. - halowa piłka nożna chłopców - eliminacjie i finał</h5>
+                                    <p>Miejsce: ZS „Elektryk”</p>
+                                    <p>Termin: 30.11.2023</p>
+                                </div>
+                            </div>
+                            <div class="resultItem">
+                                <img src="../public/icons/rugby_icon.svg" alt="rugby icon">
+                                <div class="resultItemInfo">
+                                    <h5>SOM SPP - kom. org. - halowa piłka nożna chłopców - eliminacjie i finał</h5>
+                                    <p>Miejsce: ZS „Elektryk”</p>
+                                    <p>Termin: 30.11.2023</p>
+                                </div>
+                            </div>
+                            <div class="resultItem">
+                                <img src="../public/icons/game_jersey_icon.svg" alt="game jersey icon">
+                                <div class="resultItemInfo">
+                                    <h5>SOM SPP - kom. org. - halowa piłka nożna chłopców - eliminacjie i finał</h5>
+                                    <p>Miejsce: ZS „Elektryk”</p>
+                                    <p>Termin: 30.11.2023</p>
+                                </div>
+                            </div>
+                            <div class="resultItem">
+                                <img src="../public/icons/basketball_icon.svg" alt="basketball icon">
+                                <div class="resultItemInfo">
+                                    <h5>SOM SPP - kom. org. - halowa piłka nożna chłopców - eliminacjie i finał</h5>
+                                    <p>Miejsce: ZS „Elektryk”</p>
+                                    <p>Termin: 30.11.2023</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+                
+            </div>
+        </article>
+        <footer>
+            <div class="footerWrapper">
+                <div class="footerHeading">
+                    <div class="logos">
+                        <img src="../public/images/cropped-logo_szs_header.svg" class="navLogosImg" alt="Logo Szkolnego Związku Sportowego">
+                        <img src="../public/images/LOGO_SLUPSK.svg" class="navLogosImg" alt="Logo Miasta Słupsk">
+                    </div>
+                    <h2>Słupski Szkolny Związek Sportowy</h2>
+                </div>
+                <div class="footerLinks">
+                    <div class="company links">
+                        <p>ORGANIZACJA</p>
+                        <a>O nas</a>
+                        <a>Kariera</a>
+                        <a>Nowości</a>
+                    </div>
+                    <div class="legal links">
+                        <p>AKTY PRAWNE</p>
+                        <a>Zasady i Warunki</a>
+                        <a>Prywatność</a>
+                        <a>Protokoły</a>
+                        <a>Statut</a>
+                    </div>
+                    <div class="socials links">
+                        <p>OBSERWUJ NAS</p>
+                        <a href="https://www.facebook.com/profile.php?id=100086442638282">
+                            <img src="../public/icons/facebook_icon.svg" alt="facebook icon">
+                            Facebook
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <!--JS-->
+    <script src="../src/jScripts/toggleTheme.js"></script>
+    <script src="../src/jScripts/animations.js"></script>
+    <script src="../src/jScripts/calendarFilter.js"></script>
+    <script src="../src/jScripts/categoryTreeView.js"></script>
+    <script src="../src/jScripts/searchNav.js"></script>
+    <!--AOS JS-->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+</body>
+</html>

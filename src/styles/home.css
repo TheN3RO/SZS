@@ -91,6 +91,7 @@ header {
 
 .regionLogo p {
     font-size: calc(0.3rem + 1vw);
+    color: var(--text);
 }
 
 .headerImgDec {
@@ -169,6 +170,8 @@ article {
     margin: var(--interspace);
     border-radius: var(--radius);
     cursor: pointer;
+    transition: var(--transition);
+    color: var(--text);
 }
 
 .sportIcon {

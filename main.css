@@ -107,6 +107,7 @@ nav {
 
 .navBarItem {
     padding: var(--interspace);
+    color: var(--text);
 }
 
 .navCategories {

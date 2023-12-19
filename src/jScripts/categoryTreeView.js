@@ -39,7 +39,6 @@ class navTree {
 
     openNav() {
         this.navTrigger.addEventListener('click', () => {
-            const backgroundColorProp = getComputedStyle(document.documentElement).getPropertyValue('--primary');
             const borderColorProp = getComputedStyle(document.documentElement).getPropertyValue('--tertiary');
             if (!this.navTrigger.classList.contains("closed")) {
                 TweenLite.to(this.navContent, 0.2, {scaleY: 0, onComplete: () => {

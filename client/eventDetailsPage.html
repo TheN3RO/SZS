@@ -103,68 +103,53 @@
                 </div>
             </div>
         </nav>
-        <header>
-            <img src="../public/images/decoration2.svg" alt="decoration 2" class="dec2">
+        <!--<header>
             <div class="filtersWrapper container-md">
                 <div class="filterItem byCategory">
-                    <label for="categoryFilter">Kategoria</label>
-                    <select id="categoryFilter" class="filterInput">
+                    <select id="categoryFilter" class="filterInput" aria-placeholder="Kategoria">
                         <option value="spm">Szkoły Podstawowe - młodsze rocz.</option>
                         <option value="spm">Szkoły Podstawowe - starsze rocz.</option>
                         <option value="spp">Szkoły Ponadpodstawowe</option>
                     </select>
                 </div>
                 <div class="filterItem">
-                    <label for="monthFilter">Miesiąc</label>
-                    <input id="calendarMonth" name="monthFilter" type="text" class="filterInput byMonth">
+                    <input id="calendarMonth" name="monthFilter" type="text" class="filterInput byMonth" placeholder="Miesiąc">
                 </div>
                 <div class="filterItem">
-                    <label for="yearFilter">Rok</label>
-                    <input id="calendarYear" name="yearFilter" type="text" class="filterInput byYear">
+                    <input id="calendarYear" name="yearFilter" type="text" class="filterInput byYear" placeholder="Rok">
                 </div>
                 <div class="filterItem searchForm">
-                    <label for="searchBox">Szukaj</label>
                     <div class="searchWrapper">
                         <input type="search" name="searchBox" class="searchInput filterInput">
                         <hr>
-                        <button class="searchBtn">Szukaj</button>
+                        <button class="searchBtn">
+                            <span class="material-symbols-outlined">
+                                search
+                            </span>    
+                            Szukaj
+                        </button>
                     </div>
                 </div>
             </div>
-        </header>
+        </header>-->
         <article>
             <section>
                 <div class="game container-md">
                     <div class="template">
                         <div class="templateItem">
-                            <div class="templateImgWrapper">
-                                <div class="templateImg">
-                                    <img src="../public/images/test.jpg" alt="image 1">
-                                </div>
-                                <div class="templateImg">
-                                    <img src="../public/images/test2.jpg" alt="image 2">
-                                </div>
-                                <div class="templateImg">
-                                    <img src="../public/images/test3.jpg" alt="image 3">
-                                </div>
-                                <div class="templateImg">
-                                    <img src="../public/images/test4.jpg" alt="image 4">
-                                </div>
+                            <div class="templateCalendar itemCanFloat">
+                                <div id="calendar"></div>
                             </div>
                             <div class="templateHeading">
                                 <h2>SOM SP - kom. org. - piłka siatkowa (czwórki) dziewcząt i chłopców - rocz. młodszy</h2>
-                                <p><h4>Miejsce:</h4> 
+                                <h4>Miejsce:</h4> 
                                     <p>Hala Sportowa ZSO (SP16) przy ul. Zaborowskiej 2 (sala obok szkoły)</p>
-                                <p>
-                                <p>
-                                    <h4>Termin:</h4> 
-                                    <p>dziewczęta - 12.12.2023 r. o godz.13.00 (wtorek), losowanie 12.30</p>
-                                    <p>chłopcy     - 19.12.2023 r. o godz.13.00 (wtorek), losowanie 12.30</p>
-                                </p>
-                                <p><h4>Orgzanizator:</h4> 
+                                <h4>Termin:</h4> 
+                                <p>dziewczęta - 12.12.2023 r. o godz.13.00 (wtorek), losowanie 12.30</p>
+                                <p>chłopcy     - 19.12.2023 r. o godz.13.00 (wtorek), losowanie 12.30</p>
+                                <h4>Orgzanizator:</h4> 
                                    <p>Prowadzący SOM
                                     Marek Zawadzki</p> 
-                                </p>
                             </div>
                         </div>
                         <div class="templateItem">
@@ -172,6 +157,46 @@
                                 <h3>Opis</h3>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, eligendi sit sint omnis doloremque quia quasi tenetur magni assumenda officia reprehenderit porro necessitatibus in consequatur. Voluptate, ea. Quibusdam, officia consequatur?</p>
                             </div>
+                            <div class="templateDownloadable">
+                                <h2>Do pobrania</h2>
+                                <div class="downloadableItem">
+                                    <span class="material-symbols-outlined">
+                                        download
+                                    </span>
+                                    <a href="../public/downloadable/som_org_sp_kosz3x3_dwa_rocz.docx">Komunikat końcowy</a>    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="latest container-lg">
+                    <h1>Ostatnie</h1>
+                    <div class="latestWrapper">
+                        <div class="latestItem">
+                            <img src="../public/icons/bowling_icon.svg" alt="bowling icon">
+                            <h3>Tytuł elementu</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum a reiciendis sit quaerat et pariatur fugiat totam id necessitatibus perspiciatis tempora quisquam, ex reprehenderit? Tempora ipsum consectetur temporibus esse architecto.</p>
+                            <button class="btn">Czytaj dalej</button>
+                        </div>
+                        <div class="latestItem">
+                            <img src="../public/icons/ball_baseball_icon.svg" alt="ball baseball icon">
+                            <h3>Tytuł elementu</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum a reiciendis sit quaerat et pariatur fugiat totam id necessitatibus perspiciatis tempora quisquam, ex reprehenderit? Tempora ipsum consectetur temporibus esse architecto.</p>
+                            <button class="btn">Czytaj dalej</button>
+                        </div>
+                        <div class="latestItem">
+                            <img src="../public/icons/basketball_icon.svg" alt="basketball icon">
+                            <h3>Tytuł elementu</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum a reiciendis sit quaerat et pariatur fugiat totam id necessitatibus perspiciatis tempora quisquam, ex reprehenderit? Tempora ipsum consectetur temporibus esse architecto.</p>
+                            <button class="btn">Czytaj dalej</button>
+                        </div>
+                        <div class="latestItem">
+                            <img src="../public/icons/beach_beach_ball_icon.svg" alt="beach beach ball icon">
+                            <h3>Tytuł elementu</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum a reiciendis sit quaerat et pariatur fugiat totam id necessitatibus perspiciatis tempora quisquam, ex reprehenderit? Tempora ipsum consectetur temporibus esse architecto.</p>
+                            <button class="btn">Czytaj dalej</button>
                         </div>
                     </div>
                 </div>
@@ -214,6 +239,7 @@
     <!--JS-->
     <script src="../src/jScripts/toggleTheme.js"></script>
     <script src="../src/jScripts/animations.js"></script>
+    <script src="../src/jScripts/calendar.js"></script>
     <script src="../src/jScripts/calendarFilter.js"></script>
     <script src="../src/jScripts/categoryTreeView.js"></script>
     <!--AOS JS-->
