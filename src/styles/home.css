@@ -176,7 +176,6 @@ article {
 
 .sportIcon {
     padding: var(--interspace);
-    border: 1px var(--tertiary) solid;
     border-radius: 50%;
     width: 100px;
     aspect-ratio: 1 / 1;
@@ -186,7 +185,6 @@ article {
     min-width: 300px;
     width: calc(100% - (130px));
     margin: var(--interspace);
-    border: 1px var(--tertiary) solid;
     border-radius: var(--radius);
     padding: var(--interspace);
 }

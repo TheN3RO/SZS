@@ -35,11 +35,13 @@ class searchMenu {
         this.menuFiltersHandler();
         this.menuTrigger.addEventListener("click", () => {
             if (!this.menuTrigger.classList.contains("closed")) {
-                TweenLite.fromTo(this.filterPopup, 0.3, {scale: 0, display: "none"}, {scale: 1, display: "flex"});
-                this.menuTrigger.classList.add('closed');
-            } else {
                 TweenLite.to(this.filterPopup, 0.3, {scale: 0, display: "none"});
+                this.menuTrigger.classList.add('closed');
+                this.menuTrigger.classList.remove("opened");
+            } else {
+                TweenLite.fromTo(this.filterPopup, 0.3, {scale: 0, display: "none"}, {scale: 1, display: "flex"});
                 this.menuTrigger.classList.remove("closed");
+                this.menuTrigger.classList.add('opened');
             }
         });
     }
