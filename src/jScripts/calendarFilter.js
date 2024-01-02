@@ -1,41 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const calendarsMonth = document.querySelectorAll('.calendarMonth');
-    const calendarsYear = document.querySelectorAll('.calendarYear');
+    const calendars = document.querySelectorAll('.calendarDate');
 
     //calendar month pop-up
-    calendarsMonth.forEach(calendar => {
-        const calendarMonth = new VanillaCalendar(calendar, {
+    calendars.forEach(calendar => {
+        const calendarDate = new VanillaCalendar(calendar, {
             input: true,
-            type: 'month',
+            type: "month",
+            actions: {
+                clickMonth(e, self) {
+                    if (!self.HTMLInputElement) return;
+                    if (self.selectedMonth && self.selectedYear) {
+                        self.HTMLInputElement.value = self.locale['months'][self.selectedMonth] + " " + self.selectedYear;
+                        console.log();
+                    } else {
+                        self.HTMLInputElement.value = '';
+                    }
+                },
+            },
             settings: {
                 lang: 'pl',
                 visibility: {
                     themeDetect: 'html[data-theme]',
+                    positionToInput: 'center',
                 },
             },
-            actions: {
-                changeToInput(e, calendar, self) {},
-            },
+            
         });
-        calendarMonth.init();
-    })
-    
-
-    //calendar year pop-up
-    calendarsYear.forEach(calendar => {
-        const calendarYear = new VanillaCalendar(calendar, {
-            input: true,
-            type: 'year',
-            settings: {
-                lang: 'pl',
-                visibility: {
-                    themeDetect: 'html[data-theme]',
-                },
-            },
-            actions: {
-                changeToInput(e, calendar, self) {},
-            },
-        });
-        calendarYear.init();
+        calendar.value = "Styczeń 2013";
+        calendar.classList.add('calendarDate');
+        calendarDate.init();
     })
 })

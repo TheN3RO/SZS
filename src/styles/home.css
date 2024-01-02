@@ -465,6 +465,11 @@ article {
     flex-wrap: wrap;
 }
 
+.map {
+    display: flex;
+    flex-direction: column;
+}
+
 .contactInfo {
     margin: var(--interspace);
     display: flex;

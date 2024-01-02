@@ -137,13 +137,10 @@
                                     <label for="spp">Szkoły Ponadpodstawowe</label>
                                 </div>
                             </div>
-                            <div class="filterItem">
-                                <label for="monthFilter">Miesiąc</label>
-                                <input name="monthFilter" type="text" class="filterInput byMonth calendarMonth">
-                            </div>
-                            <div class="filterItem">
-                                <label for="yearFilter">Rok</label>
-                                <input name="yearFilter" type="text" class="filterInput byYear calendarYear">
+                            <div class="filterItem calendarFilterWrapper">
+                                <img src="../public/icons/calendar_icon.svg" alt="calendar icon">
+                                <label for="dateFilter">Filtruj od</label>
+                                <input name="dateFilter" type="text" class="filterInput calendarDate">
                             </div>
                         </div>
                     </div>
@@ -152,9 +149,13 @@
                             <hr>
                             <div class="resultNavWrapper">
                                 <div id="filterMenu">
-                                    <span class="material-symbols-outlined menuTrigger">
-                                        menu
-                                    </span>
+                                    <div class="menuBtn">
+                                        <div class="btn closed menuTrigger">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                    </div>
                                     <div class="filtersWrapper" id="filtersPopup">
                                         <div class="filterItem searchForm">
                                             <div class="searchWrapper">
@@ -184,13 +185,10 @@
                                                 <label for="spp">Szkoły Ponadpodstawowe</label>
                                             </div>
                                         </div>
-                                        <div class="filterItem">
-                                            <label for="monthFilter">Miesiąc</label>
-                                            <input name="monthFilter" type="text" class="filterInput byMonth calendarMonth">
-                                        </div>
-                                        <div class="filterItem">
-                                            <label for="yearFilter">Rok</label>
-                                            <input name="yearFilter" type="text" class="filterInput byYear calendarYear">
+                                        <div class="filterItem calendarFilterWrapper">
+                                            <img src="../public/icons/calendar_icon.svg" alt="calendar icon">
+                                            <label for="dateFilter">Filtruj od</label>
+                                            <input name="dateFilter" type="text" class="filterInput calendarDate">
                                         </div>
                                     </div>
                                 </div>
