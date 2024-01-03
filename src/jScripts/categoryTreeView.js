@@ -6,7 +6,7 @@ const navHeader = document.querySelector('.navCategories');
 const navContent = document.querySelector('.navCatContent');
 const navIcon = document.querySelector('.catLessIcon');
 
-class navTree {
+class NavTree {
     constructor( nav, nestedUls, togglers, trigger, content, header, icon) {
         this.navigation = nav;
         this.uls = nestedUls;
@@ -72,7 +72,7 @@ class navTree {
     }
 }
 
-const nav = new navTree( navigation, uls, ulTogglers, navTrigger, navContent, navHeader, navIcon);
+const nav = new NavTree( navigation, uls, ulTogglers, navTrigger, navContent, navHeader, navIcon);
 nav.openNested();
 nav.openNav();
 nav.monitorPassage();

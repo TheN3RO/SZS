@@ -423,7 +423,7 @@ nav {
 .pageNum {
     display: flex;
     align-items: center;
-    min-width: 100px;
+
 }
 
 .pageNumInput {
@@ -649,8 +649,7 @@ nav {
         justify-content: center;
     }
     .galleryImgItem {
-        max-width: 100px;
-        max-height: 100px;
+
         aspect-ratio: 1/1;
         margin: 3px;
     }
@@ -658,3 +657,202 @@ nav {
         display: none;
     }
 }
+
+/*================================MODAL STYLES==========================*/
+
+.modal {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modalContent {
+    border-radius: var(--radius);
+    position: relative;
+    background-color: var(--background);
+    margin: auto;
+    padding: 0;
+    border: 1px solid var(--tertiary);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+.close {
+    color: var(--text);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.close:hover,
+.close:focus {
+    color: var(--chosen);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    font-family: 'Inter', sans-serif;
+    padding: 2px 16px;
+    background-color: var(--primary);
+    color: var(--text);
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.modalBody {
+    padding: 2px 16px;
+}
+
+.modalFooter {
+    padding: 2px 16px;
+    background-color: var(--primary);
+    color: var(--text);
+    border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.imgViewer {
+    width: 100%;
+    padding-bottom: 2rem;
+    border-bottom: 1px var(--tertiary) solid;
+}
+
+.imgViewContent {
+    display: flex;
+    position: relative;
+}
+
+.imgViewContent > img {
+    width: 100%;
+    max-height: 600px;
+    object-fit: contain;
+}
+
+.imgViewControls {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.imgViewControls > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.imgViewControls span {
+    color: #fff;
+    transition: var(--transition);
+    background: #0000006e;
+    padding: 2rem;
+    border-radius: 50%;
+}
+
+.imgViewControls span:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    background: #00000094;
+}
+
+.imgsViewWrapper {
+    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap
+}
+
+.imgsViewItem {
+    width: 120px;
+    aspect-ratio: 1/1;
+    margin: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #000;
+}
+
+.imgsViewItem > span {
+    padding: 1rem;
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.imgsViewItem:hover > span {
+    opacity: 1;
+}
+
+.imgsViewItem:hover img {
+    opacity: 0.6;
+    filter: blur(1px);
+}
+
+.imgsViewItem > img {
+    object-fit: cover;
+    width: 120px;
+    aspect-ratio: 1/1;
+}
+
+@media screen and (max-width: 570px) {
+    .imgsViewItem > img {
+        width: 80px;
+    }
+    .imgsViewItem {
+        width: 80px;
+    }
+    .imgViewControls > div {
+        visibility: hidden;
+    }
+}
+

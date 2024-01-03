@@ -3,7 +3,7 @@ const filtersContainer = document.querySelector('#filters');
 const menuTrigger = document.querySelector('.menuTrigger');
 const filterPopup = document.querySelector('#filtersPopup');
 
-class searchMenu {
+class SearchMenu {
     constructor(menu, filters, trigger, popup) {
         this.menuContainer = menu;
         this.filtersContainer = filters;
@@ -47,6 +47,6 @@ class searchMenu {
     }
 }
 
-const menu = new searchMenu(menuContainer, filtersContainer, menuTrigger, filterPopup);
+const menu = new SearchMenu(menuContainer, filtersContainer, menuTrigger, filterPopup);
 menu.menuFiltersHandler();
 menu.openMenu();
