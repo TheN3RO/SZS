@@ -1,6 +1,9 @@
 class Modal {
-    constructor(modalTitle) {
-        this.title = modalTitle;
+    constructor(title, type, sizeClass) {
+        this.title = title;
+        this.type = type;
+        this.size = sizeClass;
+
         var modalBox = document.createElement('div');
         modalBox.id = 'ModalBox';
         modalBox.className = 'modal';
@@ -8,13 +11,13 @@ class Modal {
 
         // Create modal content container
         var modalContent = document.createElement('div');
-        modalContent.className = 'modalContent container-sm';
+        modalContent.className = `modalContent ${this.size} ${this.modalColor}`;
         modalBox.appendChild(modalContent);
         this.modalContent = modalContent;
 
         // Create modal header
         var modalHeader = document.createElement('div');
-        modalHeader.className = 'modalHeader';
+        modalHeader.className = `modalHeader ${this.modalHeaderColor}`;
         modalContent.appendChild(modalHeader);
         this.modalHeader = modalHeader;
 
@@ -26,10 +29,10 @@ class Modal {
         this.closeBtn = closeBtn;
 
         // Create modal header title
-        var modalTitle = document.createElement('h2');
-        modalTitle.textContent = this.title;
-        modalHeader.appendChild(modalTitle);
-        this.modalTitle = modalTitle;
+        var headerTitle = document.createElement('h2');
+        headerTitle.textContent = this.title;
+        modalHeader.appendChild(headerTitle);
+        this.title = headerTitle;
 
         // Create modal body
         var modalBody = document.createElement('div');
@@ -37,11 +40,13 @@ class Modal {
         modalContent.appendChild(modalBody);
         this.modalBody = modalBody;
 
-        // Create modal footer
-        var modalFooter = document.createElement('div');
-        modalFooter.className = 'modalFooter';
-        modalContent.appendChild(modalFooter);
-        this.modalFooter = modalFooter;
+        if (this.type === "normal") {
+            // Create modal footer
+            var modalFooter = document.createElement('div');
+            modalFooter.className = `modalFooter ${this.modalFooterColor}`;
+            modalContent.appendChild(modalFooter);
+            this.modalFooter = modalFooter;
+        }
 
         closeBtn.onclick = this.destroyModal.bind(this);
 

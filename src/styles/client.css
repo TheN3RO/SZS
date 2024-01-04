@@ -673,13 +673,13 @@ nav {
 }
 
 .modalContent {
+    display: flex;
+    flex-direction: column;
     border-radius: var(--radius);
+    background: var(--background);
     position: relative;
-    background-color: var(--background);
     margin: auto;
     padding: 0;
-    border: 1px solid var(--tertiary);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
@@ -732,37 +732,50 @@ nav {
     flex-direction: row-reverse;
     font-family: 'Inter', sans-serif;
     padding: 2px 16px;
-    background-color: var(--primary);
     color: var(--text);
     border-radius: var(--radius) var(--radius) 0 0;
+    background: var(--primary);
 }
 
 .modalBody {
     padding: 2px 16px;
+    height: 100%;
 }
 
 .modalFooter {
     padding: 2px 16px;
-    background-color: var(--primary);
     color: var(--text);
     border-radius: 0 0 var(--radius) var(--radius);
+    background: var(--primary);
+}
+
+.fullScreenModal {
+    width: 100%;
+    min-height: 100vh;
 }
 
 .imgViewer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    padding-bottom: 2rem;
-    border-bottom: 1px var(--tertiary) solid;
+    height: 100%;
 }
 
-.imgViewContent {
+.imgViewMain {
     display: flex;
     position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
 }
 
-.imgViewContent > img {
-    width: 100%;
-    max-height: 600px;
-    object-fit: contain;
+.imgViewMain > img {
+    max-width: 100%;
+    height: auto;
+    transform-origin: 50% 50%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .imgViewControls {
@@ -796,15 +809,53 @@ nav {
     background: #00000094;
 }
 
-.imgsViewWrapper {
-    overflow-y: hidden;
+.imgsInfoWrapper {
     display: flex;
-    justify-content: center;
-    flex-wrap: nowrap
+    align-items: start;
+    flex-direction: column;
+    background: var(--primary);
+    padding: var(--interspace);
+    border-radius: var(--radius);
+}
+
+.imgsViewWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    width: 100%;
+    background: var(--primary);
+    border-top: 1px var(--tertiary) solid;
+    padding-top: 1.5rem;
+    margin-top: 3rem;
+}
+
+.imgBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.imgBar > p {
+    font-size: 1.2rem;
+}
+
+.imgBarIcon {
+    padding: 1rem;
+    color: #fff;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.imgBarIcon:hover {
+    transform: scale(1.1);
 }
 
 .imgsViewItem {
-    width: 120px;
+    float: left;
+    width: 140px;
     aspect-ratio: 1/1;
     margin: 3px;
     display: flex;
@@ -840,16 +891,16 @@ nav {
 
 .imgsViewItem > img {
     object-fit: cover;
-    width: 120px;
+    width: 140px;
     aspect-ratio: 1/1;
 }
 
 @media screen and (max-width: 570px) {
     .imgsViewItem > img {
-        width: 80px;
+        width: 100px;
     }
     .imgsViewItem {
-        width: 80px;
+        width: 100px;
     }
     .imgViewControls > div {
         visibility: hidden;
