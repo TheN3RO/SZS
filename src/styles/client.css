@@ -414,6 +414,13 @@ nav {
     width: 100%;
 }   
 
+.resultSort {
+    margin: 0 var(--interspace);
+    font-size: 0.9em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .sortSelect {
     padding: 0.2rem;
     border: 1px var(--tertiary) solid;
@@ -423,7 +430,7 @@ nav {
 .pageNum {
     display: flex;
     align-items: center;
-
+    white-space: nowrap;
 }
 
 .pageNumInput {
@@ -767,7 +774,7 @@ nav {
     position: relative;
     justify-content: center;
     align-items: center;
-    height: 700px;
+    height: 75vh;
 }
 
 .imgViewMain > img {
