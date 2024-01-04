@@ -5,14 +5,13 @@ const images = document.querySelectorAll('.image');
 class ImgViewer {
     constructor(imgs) {
         this.images = imgs;
-        this.imgsData = Array.from(imgs).map(img => img.querySelector('img'))
 
         this.modal = new ModalViewImg("Galeria",
             "fullView",
             "fullScreenModal",
             "SOM SP - kom. org. - piłka siatkowa (czwórki) dziewcząt i chłopców - rocz. młodszy", 
             "1 Styczeń, 2024 o 12:45",
-            this.imgsData
+            Array.from(this.images).map(img => img.querySelector('img'))
         );
     }
     
@@ -31,6 +30,7 @@ class ImgViewer {
     }
 
     showImg(index) {
+        this.modal.images = Array.from(this.images).map(img => img.querySelector('img'));
         this.modal.goTo(index);
         this.modal.showModal();
         this.useControls(this.modal.nextControl, this.modal.prevControl);

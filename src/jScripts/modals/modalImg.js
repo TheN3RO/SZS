@@ -6,7 +6,6 @@ class ModalViewImg extends Modal {
         this.desc = desc;
         this.date = date;
         this.images = images;
-        this.imgCurrentPos = [...this.images]
 
         // Add image to modal body
         var imgViewer = document.createElement('div');
@@ -64,7 +63,8 @@ class ModalViewImg extends Modal {
 
         var downloadImgInBar = document.createElement('a');
         downloadImgInBar.innerHTML = '<span class="material-symbols-outlined imgBarIcon downloadImg">download</span>';
-        downloadImgInBar.href = "#";
+        downloadImgInBar.href = "../public/images/test.jpg";
+        downloadImgInBar.download = "test.jpg";
         imgBar.appendChild(downloadImgInBar);
 
         // Create the imgsViewWrapper container
@@ -82,7 +82,7 @@ class ModalViewImg extends Modal {
         
             // Create the "open in full" icon
             var openInFullIcon = document.createElement('span');
-            openInFullIcon.className = 'material-symbols-outlined';
+            openInFullIcon.className = 'material-symbols-outlined showImg';
             openInFullIcon.textContent = 'open_in_full';
             imgViewItem.appendChild(openInFullIcon);
 
@@ -95,6 +95,14 @@ class ModalViewImg extends Modal {
 
         // Append the imgViewer to the body
         this.modalBody.appendChild(imgViewer);
+
+        this.imgsViewWrapper.childNodes.forEach((img, index) => {
+            const imgShowBtn = img.querySelector('.showImg');
+            imgShowBtn.addEventListener('click', () => {
+                this.goTo(index+1);
+                console.log();
+            });
+        })
     }
 
     goTo(index) {
@@ -107,29 +115,22 @@ class ModalViewImg extends Modal {
     }
 
     goNext() {
-        const imgsArr = [...this.imgCurrentPos]
+        const imgsArr = [...this.images]
         imgsArr.push(imgsArr.shift());
 
         this.reloadImgs(imgsArr);
     }
 
     goPrev() {
-        const imgsArr = [...this.imgCurrentPos]
+        const imgsArr = [...this.images]
         imgsArr.unshift(imgsArr.pop());
 
         this.reloadImgs(imgsArr);
     }
 
     reloadImgs(newImgArr) {
-        this.imgCurrentPos = newImgArr;
+        this.images = newImgArr;
         this.imgElement.src = `../public/images/${newImgArr[0].id}.jpg`;
-        if (this.imgElement.complete) {
-            this.imgElement.style.opacity = '1';
-        } else {
-            this.imgElement.onload = function() {
-                this.imgElement.style.opacity = '1';
-            };
-        }
 
         this.imgsViewWrapper.childNodes.forEach((aBlock, i) => {
             aBlock.querySelector('img').src = `../public/images/${newImgArr[i+1].id}.jpg`;
