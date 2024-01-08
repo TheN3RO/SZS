@@ -1,0 +1,38 @@
+.adminPanel {
+    background: var(--accent);
+    padding:  var(--interspace);
+    border-radius: var(--radius);
+}
+
+.adminMenu {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 100%;
+    border-right: 1px var(--tertiary) solid;
+}
+
+.adminMenuHeader {
+    display: flex;
+    align-items: center;
+}
+
+.adminMenuHeader > h3 {
+    text-align: center;
+    width: 100%;
+}
+
+.adminMenuContent {
+    font-size: 1.2rem;
+}
+
+.adminMenuIcon {
+    width: 1.5rem;
+    margin-right: var(--interspace);
+}
+
+.adminMenuList > li {
+    display: flex;
+    align-items: center;
+    margin: var(--interspace) var(--interspace) var(--interspace) 0;
+}

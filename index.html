@@ -29,10 +29,10 @@
 <body>
     <main>
         <nav>
-            <div class="logos">
+            <a href="./index.html" class="logos">
                 <img src="./public/images/cropped-logo_szs_header.svg" class="navLogosImg" alt="Logo Szkolnego Związku Sportowego">
                 <img src="./public/images/LOGO_SLUPSK.svg" class="navLogosImg" alt="Logo Miasta Słupsk">
-            </div>
+            </a>
             <div class="navBarWrapper">
                 <a href="./index.html"><div class="navBarItem">Home</div></a>
                 <a href="https://www.wszs.pomorze.pl" ><div class="navBarItem">Wojewódzki SZS</div></a>
@@ -41,8 +41,8 @@
             <div class="navCategories">
                 <div class="navCatHeader closed">
                     <div>
-                        <span class="material-symbols-outlined navIconBorder">category</span>
-                        Kategorie
+                        <span class="material-symbols-outlined navIconBorder">widgets</span>
+                        Menu
                     </div>
                     <span class="material-symbols-outlined catLessIcon">
                         expand_circle_down
@@ -503,10 +503,11 @@
         </footer>
     </main>
     <!--JS-->
-    <script src="./src/jScripts/toggleTheme.js"></script>
+    <!--Uniwersalne skrypty-->
+    <script src="./client/client.js" type="module"></script> 
+        <!--Lokalne skrypty-->
     <script src="./src/jScripts/carousel.js"></script>
     <script src="./src/jScripts/calendar.js"></script>
-    <script src="./src/jScripts/categoryTreeView.js"></script>
     <!--AOS JS-->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>

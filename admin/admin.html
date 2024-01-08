@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Słupski Szkolny Związek Sportowy</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!--CSS STYLES-->
+    <link rel='stylesheet' type='text/css' media='screen' href='../main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../src/styles/admin.css'>
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@300&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <!--ICONS-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
+    <!--AOS LIB-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <!--GSAP-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <!--GSAP PLUGINS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/Observer.min.js"></script>
+    <!--CALENDAR-->
+    <link href="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/build/vanilla-calendar.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/build/vanilla-calendar.min.js" defer></script>
+
+</head>
+<body>
+    <main>
+        <div class="adminPanel container-lg">
+            <div class="adminMenu">
+                <div class="adminMenuHeader">
+                    <div class="menuBtn">
+                        <div class="closed menuTrigger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <h3>Sekcje</h3>
+                </div>
+                <div class="adminMenuContent">
+                    <ul class="adminMenuList">
+                        <li>
+                            <img src="../public/icons/menu_navigation_icon.svg" alt="menu navigation icon" class="adminMenuIcon">
+                            Menu
+                        </li>
+                        <li>
+                            <img src="../public/icons/message_pencil_icon.svg" alt="message pencil icon" class="adminMenuIcon">
+                            Komunikaty
+                        </li>
+                        <li>
+                            <img src="../public/icons/image_icon.svg" alt="image icon" class="adminMenuIcon">
+                            Zdjęcia
+                        </li>
+                    </ul>
+                    <div class="themeMode">
+                        <p>Jasny</p>
+                        <div>
+                            <input type="checkbox" id="toggle"/>
+                            <label for="toggle">
+                                <span class="material-symbols-outlined themeIcon">
+                                    dark_mode
+                                </span>
+                                <span class="material-symbols-outlined themeIcon">
+                                    light_mode
+                                </span>
+                            </label>
+                        </div>
+                        <p>Ciemny</p>
+                    </div>
+                </div>
+            </div>
+            <div class="partContainer">
+
+            </div>            
+        </div>
+    </main>
+    <!--JS-->
+    <script src="./admin.js" type="module"></script>
+    <!--AOS JS-->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+</body>
+</html>

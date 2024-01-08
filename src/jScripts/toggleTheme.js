@@ -1,18 +1,28 @@
-var toggle = document.getElementById("toggle");
+class ToggleTheme {
+    constructor( toggleBtn, storedTheme) {
+        this.toggleBtn = toggleBtn;
+        this.storedTheme = storedTheme;
+        
+        if (storedTheme)
+            document.documentElement.setAttribute('data-theme', storedTheme);
 
-var storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-if (storedTheme)
-    document.documentElement.setAttribute('data-theme', storedTheme)
-
-
-toggle.onclick = function () {
-    var currentTheme = document.documentElement.getAttribute("data-theme");
-    var targetTheme = "light";
-
-    if (currentTheme === "light") {
-        targetTheme = "dark";
+        this.toggleBtn.addEventListener('click', () => {
+            this.toggleTheme();
+        })
     }
 
-    document.documentElement.setAttribute('data-theme', targetTheme)
-    localStorage.setItem('theme', targetTheme);
-};
+    toggleTheme() {
+        var currentTheme = document.documentElement.getAttribute("data-theme");
+        var targetTheme = "light";
+    
+        if (currentTheme === "light") {
+            targetTheme = "dark";
+        }
+    
+        document.documentElement.setAttribute('data-theme', targetTheme)
+        localStorage.setItem('theme', targetTheme);
+    }
+    
+}
+
+export default ToggleTheme;

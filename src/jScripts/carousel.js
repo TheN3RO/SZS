@@ -3,7 +3,6 @@ const carouselControlsContainer = document.querySelector('.carouselWrapper');
 const carouselControls = ['prev', 'next'];
 const carouselItems = document.querySelectorAll('.carouselItem');
 
-//test
 const lore = document.querySelector('.carouselLore');
 
 class Carousel {

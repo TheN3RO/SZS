@@ -72,8 +72,4 @@ class NavTree {
     }
 }
 
-const nav = new NavTree( navigation, uls, ulTogglers, navTrigger, navContent, navHeader, navIcon);
-nav.openNested();
-nav.openNav();
-nav.monitorPassage();
-
+export default NavTree;
