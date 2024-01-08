@@ -1,15 +1,20 @@
-.adminPanel {
-    background: var(--accent);
-    padding:  var(--interspace);
-    border-radius: var(--radius);
+body {
+    background: var(--sec-accent);
 }
 
+.adminPanel {
+    display: flex;
+    border-radius: var(--radius);
+    width: 100%;
+}
+
+/*================================MENU STYLES==========================*/
+
 .adminMenu {
+    padding:  var(--interspace);
     display: flex;
     flex-direction: column;
-    width: 200px;
     height: 100%;
-    border-right: 1px var(--tertiary) solid;
 }
 
 .adminMenuHeader {
@@ -23,11 +28,11 @@
 }
 
 .adminMenuContent {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 .adminMenuIcon {
-    width: 1.5rem;
+    width: 1.6rem;
     margin-right: var(--interspace);
 }
 
@@ -35,4 +40,88 @@
     display: flex;
     align-items: center;
     margin: var(--interspace) var(--interspace) var(--interspace) 0;
+}
+
+/*================================PARTS CONTENT STYLES==========================*/
+
+.partContainer {
+    width: 100%;
+}
+
+.partHeader {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.partHeader > h2 {
+    width: 100%;
+    text-align: center;
+}
+
+.partLoggedWrapper {
+    margin: var(--interspace);
+}
+
+.partLoggedName {
+    white-space: nowrap;
+    text-decoration: underline;
+}
+
+.staticActionBtns {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.partSearchWrapper {
+    width: 265px;
+}
+
+.remBtn {
+    margin-left: auto;
+    background: #da0909;
+}
+
+.remBtn:hover {
+    -webkit-box-shadow: 3px 3px 0px 0px #990707;
+    -moz-box-shadow: 3px 3px 0px 0px #990707;
+    box-shadow: 3px 3px 0px 0px #990707;
+}
+
+/*================================TABLE STYLES==========================*/
+
+.partWrapper table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.partWrapper table th:first-child {
+    width: 30px;
+    height: 50px;
+}
+
+.partWrapper table td,
+.partWrapper table th {
+    border: 1px solid var(--sec-text);
+    padding: 8px;
+}
+
+.partWrapper table tr {
+    background: var(--accent);
+}
+
+.partWrapper table tr:nth-child(even) {
+    background: var(--sec-text);
+}
+
+.partWrapper table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--secondary);
+    color: white;
 }

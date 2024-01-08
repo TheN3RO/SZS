@@ -174,10 +174,6 @@ nav {
     text-decoration: underline !important;
 }
 
-.searchInput::-webkit-search-cancel-button {
-    -webkit-appearance: none;
-}
-
 .byCategory {
     display: flex;
     flex-direction: column;
@@ -199,37 +195,6 @@ nav {
     border: 1px var(--tertiary) solid;
     margin-left: 0.3rem;
     width: 50%;
-}
-
-
-
-.searchWrapper {
-    display: flex;
-    border: 1px var(--tertiary) solid;
-    border-radius: var(--radius);
-    background: var(--background);
-    padding: 0.3rem;
-}
-
-.searchWrapper hr {
-    width: 1px;
-    height: 139%;
-    background: var(--tertiary);
-    margin: -0.3rem 0.3rem 0 0.3rem;
-}
-
-.searchBtn {
-    background: var(--background);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    transition: var(--transition);
-    color: var(--text);
-}
-
-.searchBtn:hover {
-    color: var(--chosen);
 }
 
 .resultBox {

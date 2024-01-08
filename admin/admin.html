@@ -28,7 +28,7 @@
 </head>
 <body>
     <main>
-        <div class="adminPanel container-lg">
+        <div class="adminPanel">
             <div class="adminMenu">
                 <div class="adminMenuHeader">
                     <div class="menuBtn">
@@ -43,7 +43,11 @@
                 <div class="adminMenuContent">
                     <ul class="adminMenuList">
                         <li>
-                            <img src="../public/icons/menu_navigation_icon.svg" alt="menu navigation icon" class="adminMenuIcon">
+                            <img src="../public/icons/statistics_icon.svg" alt="statistics icon" class="adminMenuIcon">
+                            Statystyki
+                        </li>
+                        <li>
+                            <img src="../public/icons/list_menu_icon.svg" alt="list menu icon" class="adminMenuIcon">
                             Menu
                         </li>
                         <li>
@@ -73,7 +77,64 @@
                 </div>
             </div>
             <div class="partContainer">
-
+                <div class="partHeader">
+                    <h2>Panel zarządzania</h2>
+                    <div class="partLoggedWrapper">
+                        <div class="partLoggedName">Robert Osiewicz</div>
+                    </div>
+                </div>
+                <div class="partWrapper" id="partAnchor">
+                    <div class="staticActionBtns">
+                        <div class="partSearchWrapper">
+                            <div class="searchWrapper">
+                                <input type="search" name="searchBox" class="searchInput filterInput">
+                                <hr>
+                                <button class="searchBtn">
+                                    <span class="material-symbols-outlined">
+                                        search
+                                    </span>    
+                                    Szukaj
+                                </button>
+                            </div>
+                        </div>
+                        <button class="btn">Dodaj</button>
+                        <button class="btn remBtn">Usuń</button>
+                    </div>
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>Nazwa</th>
+                            <th>Data</th>
+                            <th>Typ</th>
+                            <th>Termin</th>
+                            <th>Akcje</th>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="partTableCheckbox"></td>
+                            <td>SOM SPP - kom. org. - halowa piłka nożna chłopców - eliminacjie i finał</td>
+                            <td>08.01.2024</td>
+                            <td>Ukończone</td>
+                            <td>08 - 10.01.2024</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="partTableCheckbox"></td>
+                            <td>SOM SPP - kom. org. - halowa piłka nożna chłopców - eliminacjie i finał</td>
+                            <td>08.01.2024</td>
+                            <td>Ukończone</td>
+                            <td>08 - 10.01.2024</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="partTableCheckbox"></td>
+                            <td>SOM SPP - kom. org. - halowa piłka nożna chłopców - eliminacjie i finał</td>
+                            <td>08.01.2024</td>
+                            <td>Ukończone</td>
+                            <td>08 - 10.01.2024</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
             </div>            
         </div>
     </main>

@@ -350,7 +350,7 @@ footer {
     width: 100%;
     border-radius: 2px;
     height: 3px;
-    background: #000;
+    background: var(--sec-background);
     transition: all .3s;
     position: relative;
 }
@@ -478,4 +478,44 @@ footer {
     100% {
         transform: scale(1);
     }
+}
+
+/*================================SEARCH FORM INPUT==========================*/
+
+.searchWrapper {
+    display: flex;
+    border: 1px var(--tertiary) solid;
+    border-radius: var(--radius);
+    background: var(--background);
+    padding: 0.3rem;
+}
+
+.searchWrapper hr {
+    width: 1px;
+    height: 139%;
+    background: var(--tertiary);
+    margin: -0.3rem 0.3rem 0 0.3rem;
+}
+
+.searchBtn {
+    background: var(--background);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    transition: var(--transition);
+    color: var(--text);
+}
+
+.searchBtn:hover {
+    color: var(--chosen);
+}
+
+.searchInput {
+    background: transparent;
+    color: var(--text);
+}
+
+.searchInput::-webkit-search-cancel-button {
+    -webkit-appearance: none;
 }
