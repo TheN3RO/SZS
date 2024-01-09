@@ -27,7 +27,8 @@
     <!--CALENDAR-->
     <link href="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/build/vanilla-calendar.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vanilla-calendar-pro/build/vanilla-calendar.min.js" defer></script>
-
+    <!--BOOTSTRAP5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
     <main>
@@ -108,61 +109,54 @@
         <article>
             <section>
                 <div class="game container-md">
-                    <div class="template">
-                        <div class="templateItem">
-                            <div class="templateImgWrapper itemCanFloat">
-                                <div class="mainImageWrapper image">
-                                    <span class="material-symbols-outlined showImg">open_in_full</span>
-                                    <img src="../public/images/test4.jpg" alt="main image in slider" id="test4">
-                                </div>
-                                <div class="imgsBarWrapper">
-                                    <span class="material-symbols-outlined imgBarControlBack">arrow_back_ios</span>
-                                    <div class="imgsBar">
-                                        <div class="imgsViewItem image">
+                    <div class="template container">
+                        <div class="templateItem row">
+                            <div class="col-md">
+                                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active templateImgOpenInFull image">
                                             <span class="material-symbols-outlined showImg">open_in_full</span>
-                                            <img src="../public/images/test.jpg" alt="image1" id="test">
+                                            <img src="../public/images/test.jpg" class="d-block templateImg" alt="first image" id="test">
                                         </div>
-                                        <div class="imgsViewItem image">
+                                        <div class="carousel-item image templateImgOpenInFull">
                                             <span class="material-symbols-outlined showImg">open_in_full</span>
-                                            <img src="../public/images/test2.jpg" alt="image2" id="test2"> 
+                                            <img src="../public/images/test2.jpg" class="d-block templateImg" alt="second image" id="test2">
                                         </div>
-                                        <div class="imgsViewItem image">
+                                        <div class="carousel-item image templateImgOpenInFull">
                                             <span class="material-symbols-outlined showImg">open_in_full</span>
-                                            <img src="../public/images/test3.jpg" alt="image3" id="test3">
-                                        </div>
-                                        <div class="imgsViewItem image">
-                                            <span class="material-symbols-outlined showImg">open_in_full</span>
-                                            <img src="../public/images/test4.jpg" alt="image4" id="test4">
+                                            <img src="../public/images/test3.jpg" class="d-block templateImg" alt="third image" id="test3">
                                         </div>
                                     </div>
-                                    <span class="material-symbols-outlined imgBarControlNext">arrow_forward_ios</span>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
                                 </div>
                             </div>
-
-                            <!--<div class="templateImgWrapper itemCanFloat">
-                                <div class="templateImg image">
-                                    <img src="../public/images/test.jpg" alt="image 1">
-                                </div>
-                                <div class="templateImg image">
-                                    <img src="../public/images/test2.jpg" alt="image 2">
-                                </div>
-                                <div class="templateImg image">
-                                    <img src="../public/images/test3.jpg" alt="image 3">
-                                </div>
-                                <div class="templateImg image">
-                                    <img src="../public/images/test4.jpg" alt="image 4">
-                                </div>
-                            </div>-->
-                            <div class="templateHeading">
-                                <h2>SOM SP - kom. org. - piłka siatkowa (czwórki) dziewcząt i chłopców - rocz. młodszy</h2>
-                                <h4>Miejsce:</h4> 
-                                    <p>Hala Sportowa ZSO (SP16) przy ul. Zaborowskiej 2 (sala obok szkoły)</p>
-                                <h4>Termin:</h4> 
-                                <p>dziewczęta - 12.12.2023 r. o godz.13.00 (wtorek), losowanie 12.30</p>
-                                <p>chłopcy     - 19.12.2023 r. o godz.13.00 (wtorek), losowanie 12.30</p>
-                                <h4>Orgzanizator:</h4> 
-                                   <p>Prowadzący SOM
-                                    Marek Zawadzki</p> 
+                            <div class="col-md">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <h2>SOM SP - kom. org. - piłka siatkowa (czwórki) dziewcząt i chłopców - rocz. młodszy</h2>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h5>Miejsce:</h5> 
+                                        <p>Hala Sportowa ZSO (SP16) przy ul. Zaborowskiej 2 (sala obok szkoły)</p>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h5>Termin:</h5> 
+                                        <p>dziewczęta - 12.12.2023 r. o godz.13.00 (wtorek), losowanie 12.30</p>
+                                        <p>chłopcy     - 19.12.2023 r. o godz.13.00 (wtorek), losowanie 12.30</p>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <h5>Orgzanizator:</h5> 
+                                        <p>Prowadzący SOM
+                                            Marek Zawadzki</p> 
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                         <div class="templateItem">
@@ -254,7 +248,8 @@
 
     <script src="../src/jScripts/calendarFilter.js"></script>
     <script type="module" src="../src/jScripts/imgTools.js"></script>
-    <script src="../src/jScripts/templateScripts/imageSlider.js"></script>
+    <!--BOOTSTRAP5-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!--AOS JS-->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
