@@ -18,13 +18,9 @@ class ImgViewer {
     handleImg() {
         this.images.forEach((img, i) => {
             const imgShowBtn = img.querySelector('.showImg');
-            const imgDownloadBtn = img.querySelector('.downloadImg');
 
             imgShowBtn.addEventListener('click', () => {
                 this.showImg(i);
-            });
-            imgDownloadBtn.addEventListener('click', () => {
-                this.downloadImg(i);
             });
         });
     }
@@ -34,10 +30,6 @@ class ImgViewer {
         this.modal.goTo(index);
         this.modal.showModal();
         this.useControls(this.modal.nextControl, this.modal.prevControl);
-    }
-
-    downloadImg(image, index) {
-
     }
 
     useControls(nextCon, prevCon) {

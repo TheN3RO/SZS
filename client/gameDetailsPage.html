@@ -8,6 +8,7 @@
     <!--CSS STYLES-->
     <link rel='stylesheet' type='text/css' media='screen' href='../main.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='../src/styles/client.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../src/styles/templates.css'>
     <!--FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -110,19 +111,48 @@
                     <div class="template">
                         <div class="templateItem">
                             <div class="templateImgWrapper itemCanFloat">
-                                <div class="templateImg">
-                                    <img src="../public/images/test.jpg" alt="image 1">
+                                <div class="mainImageWrapper image">
+                                    <span class="material-symbols-outlined showImg">open_in_full</span>
+                                    <img src="../public/images/test4.jpg" alt="main image in slider" id="test4">
                                 </div>
-                                <div class="templateImg">
-                                    <img src="../public/images/test2.jpg" alt="image 2">
-                                </div>
-                                <div class="templateImg">
-                                    <img src="../public/images/test3.jpg" alt="image 3">
-                                </div>
-                                <div class="templateImg">
-                                    <img src="../public/images/test4.jpg" alt="image 4">
+                                <div class="imgsBarWrapper">
+                                    <span class="material-symbols-outlined imgBarControlBack">arrow_back_ios</span>
+                                    <div class="imgsBar">
+                                        <div class="imgsViewItem image">
+                                            <span class="material-symbols-outlined showImg">open_in_full</span>
+                                            <img src="../public/images/test.jpg" alt="image1" id="test">
+                                        </div>
+                                        <div class="imgsViewItem image">
+                                            <span class="material-symbols-outlined showImg">open_in_full</span>
+                                            <img src="../public/images/test2.jpg" alt="image2" id="test2"> 
+                                        </div>
+                                        <div class="imgsViewItem image">
+                                            <span class="material-symbols-outlined showImg">open_in_full</span>
+                                            <img src="../public/images/test3.jpg" alt="image3" id="test3">
+                                        </div>
+                                        <div class="imgsViewItem image">
+                                            <span class="material-symbols-outlined showImg">open_in_full</span>
+                                            <img src="../public/images/test4.jpg" alt="image4" id="test4">
+                                        </div>
+                                    </div>
+                                    <span class="material-symbols-outlined imgBarControlNext">arrow_forward_ios</span>
                                 </div>
                             </div>
+
+                            <!--<div class="templateImgWrapper itemCanFloat">
+                                <div class="templateImg image">
+                                    <img src="../public/images/test.jpg" alt="image 1">
+                                </div>
+                                <div class="templateImg image">
+                                    <img src="../public/images/test2.jpg" alt="image 2">
+                                </div>
+                                <div class="templateImg image">
+                                    <img src="../public/images/test3.jpg" alt="image 3">
+                                </div>
+                                <div class="templateImg image">
+                                    <img src="../public/images/test4.jpg" alt="image 4">
+                                </div>
+                            </div>-->
                             <div class="templateHeading">
                                 <h2>SOM SP - kom. org. - piłka siatkowa (czwórki) dziewcząt i chłopców - rocz. młodszy</h2>
                                 <h4>Miejsce:</h4> 
@@ -220,9 +250,11 @@
         </footer>
     </main>
     <!--JS-->
-    <script src="./client.js" type="module"></script> 
+    <script src="./client.js" type="module"></script>
 
     <script src="../src/jScripts/calendarFilter.js"></script>
+    <script type="module" src="../src/jScripts/imgTools.js"></script>
+    <script src="../src/jScripts/templateScripts/imageSlider.js"></script>
     <!--AOS JS-->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
